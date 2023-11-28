@@ -1,0 +1,17 @@
+$purple-700: #93278f;
+$purple-500: #cf97ff;
+$purple-300: rgb(255, 153, 230);
+$green-500: #39b54a;
+$green-300: #23d5ab;
+$blue-700: #4452a2;
+$blue-500: #6673ff;
+$blue-300: rgb(207, 204, 255);
+$white-color: #ffffff;
+$dark-color: #000000;
+
+:export {
+  green: $green-500;
+  blue: $blue-500;
+  dark: $dark-color;
+  white: $white-color;
+}
