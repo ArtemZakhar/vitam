@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import '../globals.scss';
 
 import Header from '@/components/layout/header';
+import Footer from '@/components/footer/footer';
 
 const inter = Playfair_Display({
   weight: ['400', '500', '700'],
@@ -45,6 +46,14 @@ export default function RootLayout({ children, params: { locale } }) {
           }}
         />
         {children}
+        <Footer
+          messages={{
+            address: t('address'),
+            tel: t('tel'),
+            mail: t('mail'),
+            rights: t('rights'),
+          }}
+        />
       </body>
     </html>
   );

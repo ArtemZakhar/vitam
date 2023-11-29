@@ -1,10 +1,13 @@
 import MainPage from '@/components/mainPage/mainPage';
 import classes from './page.module.scss';
 import { useTranslations } from 'next-intl';
+import { useMessages } from 'next-intl';
 import OrderSteps from '@/components/orderSteps/orderSteps';
 
 export default function Home() {
   const t = useTranslations('MAINPAGE');
+  const messages = useMessages();
+  // console.log(messages.MAINPAGE.steps);
 
   return (
     <main className={classes.main}>
@@ -20,9 +23,7 @@ export default function Home() {
           h1: t('h1'),
         }}
       />
-      <NextIntlClientProvider messages={messages}>
-        <OrderSteps />
-      </NextIntlClientProvider>
+      <OrderSteps title={t('steps_title')} messages={messages.MAINPAGE.steps} />
     </main>
   );
 }

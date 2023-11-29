@@ -1,0 +1,84 @@
+@import '../../app/variables.scss';
+
+.container {
+  width: 90%;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__icon {
+    width: 33px;
+    height: 33px;
+    background: $purple-700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  &__info {
+    font-size: 16px;
+    font-weight: bold;
+    color: $grey-700;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    width: 991px;
+    &__info {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    height: 200px;
+  }
+  .footer {
+    width: 767px;
+    flex-direction: column;
+    &__wrapper {
+      margin-top: 10px;
+    }
+    &__info {
+      font-size: 13px;
+    }
+    &__icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .footer {
+    width: 575px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    width: 300px;
+  }
+  .footer {
+    &__info {
+      font-size: 12px;
+    }
+  }
+}

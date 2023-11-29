@@ -43,7 +43,7 @@
 .hamburger_menu,
 .menu_list {
   position: fixed;
-  z-index: 2;
+  z-index: 4;
 }
 
 .menu_list {
@@ -81,7 +81,7 @@
   position: fixed;
   top: 60px;
   right: -2800px;
-  z-index: 1;
+  z-index: 3;
   background-color: $purple-700;
   transform: translate(-100%, -100%);
   transition: all 0.3s ease-out;

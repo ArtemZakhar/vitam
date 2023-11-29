@@ -4,7 +4,11 @@
     "about": "About",
     "services": "Services",
     "differences": "Differences",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "address": "Kyiv, Liniyna str. 17, office 104",
+    "tel": "+38 (044) 338 30 18",
+    "mail": "info@vitam.com.ua",
+    "rights": "© 2023 Vitam. All rights reserved"
   },
   "MAINPAGE": {
     "the": "The",
@@ -15,31 +19,32 @@
     "because": "because",
     "slogan": "We Live Logistics",
     "h1": "Vitam Ukraine - forwarding company.",
+    "steps_title": "What should be done for the first shipment?",
     "steps": {
-      "1": {
+      "first": {
         "id": 1,
         "name": "Send cargo detailes",
         "description": "Every cargo has its specifics. That is why clients have no desire to involve new agents. Some complaints about existing agents rejects due to the necessity to set up work with new partner. Vitam Ukraine understands the depth of the problem, attracts additional resources and attention for the first several shipments, and knows how to deal with such requests. It is very important to give explicit information about the cargo and order to avoid further misunderstanding.",
         "linkDescription": "Please fill out the form and we will respond to you in determined terms.",
         "link": "Link",
-        "url": "url"
+        "url": "/contacts"
       },
-      "2": {
+      "second": {
         "id": 2,
         "name": "Price calculating",
         "description": "Depending on received information our company analyzes the pool of possible executors. It is very important to have good reliable relations with a carrier, understand his streams, and sometimes internal policy to get the relevant market price. Sometimes geography is of great importance, sometimes cargo specific, sometimes payment term. These all are notions that will play huge a role in customer satisfaction."
       },
-      "3": {
+      "third": {
         "id": 3,
         "name": "Possible negotiations",
         "description": "Very often things change: empty stocks and additional order are received, shipment date is postponed,  quantity, payment terms, and so on. It is a very normal situation in nowadays world. So, please, don't throw off the scales this step."
       },
-      "4": {
+      "fourth": {
         "id": 4,
         "name": "Agreement sign",
         "description": "No agreement - no truck. We appreciate the work of our carriers as much as the Client's work. We want the supply chain to be directional rather than manually controlled. The main risk that will let you sleep is having a signed good agreement."
       },
-      "5": {
+      "fifth": {
         "id": 5,
         "name": "First shipment",
         "description": "Grab a cup of coffee or tea and make yourself comfortable - the shipments have just finished and you didn't notice)."
