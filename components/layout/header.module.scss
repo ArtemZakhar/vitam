@@ -89,21 +89,22 @@
 }
 
 .navigation_block:hover .bar.upper_bar,
-.navigation_block:hover .bar.lower_bar {
-  transform: translatey(0px);
+.navigation_block:hover .bar.lower_bar,
+.navigation_block:hover .bar.middle_bar {
+  transform: translatex(1000px);
 }
 
-.navigation_block:hover .bar.upper_bar {
-  transform: rotate(45deg);
+/* .navigation_block:hover .bar.upper_bar {
+  transform: translatex(1000px);
 }
 
 .navigation_block:hover .bar.lower_bar {
-  transform: rotate(-45deg);
+  transform: translatex(1000px);
 }
 
 .navigation_block:hover .bar.middle_bar {
   transform: translatex(1000px);
-}
+} */
 
 .navigation_block:hover .menu_list {
   margin-top: 20px;
