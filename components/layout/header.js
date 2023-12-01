@@ -6,14 +6,20 @@ import { usePathname } from 'next/navigation';
 import { useRouter } from '../../navigation';
 
 import classes from './header.module.scss';
+import { useState } from 'react';
 
 function Header({ messages }) {
+  const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const { main, about, services, differences, contacts } = messages;
 
   function handleLanguege(locale) {
     router.push(`/${pathname.slice(4)}`, { locale: locale });
+  }
+
+  function handleView() {
+    showMenu ? setShowMenu(false) : setShowMenu(true);
   }
   return (
     <div className={classes.container}>
@@ -26,8 +32,8 @@ function Header({ messages }) {
           alt="vitam logo"
         />
       </Link>
-      <div className={classes.navigation_block}>
-        <div className={classes.hamburger_menu}>
+      <div className={`${classes.navigation_block} ${showMenu && classes.navigation_block_active}`}>
+        <div onClick={handleView} className={classes.hamburger_menu}>
           <div className={`${classes.bar} ${classes.upper_bar}`}></div>
           <div className={`${classes.bar} ${classes.middle_bar}`}></div>
           <div className={`${classes.bar} ${classes.lower_bar}`}></div>

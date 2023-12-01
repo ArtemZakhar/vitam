@@ -104,7 +104,7 @@
 }
 
 .button {
-  width: 150px;
+  width: 250px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -119,6 +119,7 @@
   font-size: 22px;
   border-radius: 16px;
   letter-spacing: 5px;
+  margin-bottom: 30px;
   @include ease;
   &:hover {
     background: $blue-500;
@@ -151,8 +152,9 @@
 
 .message {
   position: absolute;
-  left: 375px;
-  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px;
   font-size: 15px;
   font-weight: bold;
   &__wrapper {
@@ -162,6 +164,188 @@
     color: $green-700;
   }
   &_error {
-    color: rgb(195, 19, 19);
+    color: $red-700;
+  }
+}
+
+@media (max-width: 991px) {
+  .h1 {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+
+  .form {
+    width: 500px;
+    .field {
+      margin-bottom: 12px;
+    }
+  }
+
+  .inputName,
+  .inputEmail,
+  .textareaMsg {
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .labelName,
+  .labelEmail,
+  .textareaLabel {
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  .textareaMsg {
+    height: 120px;
+  }
+  .textareaLabel {
+    height: 120px;
+  }
+
+  .button {
+    font-size: 17px;
+    letter-spacing: 4px;
+  }
+
+  .checked {
+    font-size: 14px;
+    &_icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .cargoDetailes {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .h1 {
+    font-size: 21px;
+  }
+
+  .form {
+    width: 400px;
+    .field {
+      margin-bottom: 10px;
+    }
+  }
+
+  .inputName,
+  .inputEmail,
+  .textareaMsg {
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .labelName,
+  .labelEmail,
+  .textareaLabel {
+    height: 25px;
+    font-size: 14px;
+  }
+  .textareaMsg {
+    height: 100px;
+  }
+  .textareaLabel {
+    height: 100px;
+  }
+
+  .button {
+    font-size: 16px;
+    letter-spacing: 3px;
+    width: 15 0px;
+    height: 35px;
+  }
+
+  .checked {
+    font-size: 13px;
+    &_icon {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .cargoDetailes {
+    font-size: 13px;
+  }
+
+  .message {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 575px) {
+  .h1 {
+    font-size: 18px;
+  }
+
+  .form {
+    width: 250px;
+    .field {
+      input[type='text'],
+      textarea {
+        &:focus,
+        &.focused {
+          + label {
+            width: 25%;
+          }
+        }
+      }
+      &:hover {
+        label {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  .inputName,
+  .inputEmail,
+  .textareaMsg {
+    padding-left: 26.5%;
+    font-size: 11px;
+  }
+  .labelName,
+  .labelEmail,
+  .textareaLabel {
+    letter-spacing: 1px;
+  }
+
+  .button {
+    font-size: 16px;
+    letter-spacing: 3px;
+    width: 140px;
+    height: 35px;
+    margin-bottom: 20px;
+  }
+
+  .checked {
+    left: 20px;
+    top: 5px;
+    &_text {
+      display: none;
+    }
+  }
+
+  .cargoDetailes {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .message {
+    top: -15px;
+    &_error {
+      left: 0px;
+      transform: translateX(0);
+      font-size: 13px;
+    }
   }
 }

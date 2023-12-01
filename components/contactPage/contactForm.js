@@ -7,7 +7,40 @@ import classes from './contactPage.module.scss';
 import Done from './icons/done.png';
 import Spinner from './icons/spinner.svg';
 
-function ContactForm() {
+function ContactForm({ message }) {
+  const {
+    h1,
+    name,
+    nameLabel,
+    check,
+    email,
+    emailLabel,
+    msg,
+    msgLabel,
+    show,
+    cargo,
+    cargoLabel,
+    transportType,
+    transportTypeLabel,
+    index,
+    indexLabel,
+    loadingPlace,
+    loadingPlaceLabel,
+    loadingCountry,
+    loadingCountryLabel,
+    deliveryPlace,
+    deliveryPlaceLabel,
+    deliveryCountry,
+    deliveryCountryLabel,
+    paymentTerms,
+    paymentTermsLabel,
+    handle,
+    handleLabel,
+    send,
+    error,
+    succeed,
+  } = message;
+
   const initialState = {
     name: false,
     email: false,
@@ -147,7 +180,7 @@ function ContactForm() {
 
   return (
     <Fragment>
-      <h1 className={classes.h1}>Please contact us</h1>
+      <h1 className={classes.h1}>{h1}</h1>
 
       <form className={classes.form} onSubmit={handleSubmit}>
         <div className={`${classes.field}`}>
@@ -158,10 +191,10 @@ function ContactForm() {
             id="name"
             required
             ref={nameInputRef}
-            placeholder="Who Are You?"
+            placeholder={name}
           />
           <label className={classes.labelName} htmlFor="name">
-            Name
+            {nameLabel}
           </label>
           <div className={classes.checked}>
             <Image
@@ -176,7 +209,7 @@ function ContactForm() {
               style={{ opacity: `${blure.name === true ? 1 : 0}` }}
               className={classes.checked_text}
             >
-              check
+              {check}
             </span>
           </div>
         </div>
@@ -189,10 +222,10 @@ function ContactForm() {
             type="text"
             id="email"
             ref={emailInputRef}
-            placeholder="name@email.com"
+            placeholder={email}
           />
           <label className={classes.labelEmail} htmlFor="email">
-            Email
+            {emailLabel}
           </label>
           <div className={classes.checked}>
             <Image
@@ -207,7 +240,7 @@ function ContactForm() {
               style={{ opacity: `${blure.email === true ? 1 : 0}` }}
               className={classes.checked_text}
             >
-              check
+              {check}
             </span>
           </div>
         </div>
@@ -219,10 +252,10 @@ function ContactForm() {
             id="msg"
             rows="5"
             ref={msgInputRef}
-            placeholder="Your message goes here..."
+            placeholder={msg}
           />
           <label className={classes.textareaLabel} htmlFor="msg">
-            Msg
+            {msgLabel}
           </label>
           <div className={classes.checked}>
             <Image
@@ -237,13 +270,13 @@ function ContactForm() {
               style={{ opacity: `${blure.msg === true ? 1 : 0}` }}
               className={classes.checked_text}
             >
-              check
+              {check}
             </span>
           </div>
         </div>
 
         <p onClick={handleView} className={classes.cargoDetailes}>
-          Fill cargo details
+          {show}
         </p>
 
         {moreLines && (
@@ -255,10 +288,10 @@ function ContactForm() {
                 type="text"
                 id="cargo"
                 ref={cargoInputRef}
-                placeholder="Cargo name"
+                placeholder={cargo}
               />
               <label className={classes.labelName} htmlFor="cargo">
-                Cargo
+                {cargoLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -273,7 +306,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.cargo === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -284,10 +317,10 @@ function ContactForm() {
                 type="text"
                 ref={transportTypeInputRef}
                 id="transportType"
-                placeholder="Vehicle type"
+                placeholder={transportType}
               />
               <label className={classes.labelName} htmlFor="transportType">
-                Vehicle
+                {transportTypeLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -302,7 +335,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.transportType === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -313,10 +346,10 @@ function ContactForm() {
                 type="text"
                 id="index"
                 ref={indexInputRef}
-                placeholder="Loading place(index)"
+                placeholder={index}
               />
               <label className={classes.labelName} htmlFor="index">
-                Index
+                {indexLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -331,7 +364,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.index === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -342,10 +375,10 @@ function ContactForm() {
                 type="text"
                 id="loadingPlace"
                 ref={loadingPlaceInputRef}
-                placeholder="Loading place(city)"
+                placeholder={loadingPlace}
               />
               <label className={classes.labelName} htmlFor="loadingPlace">
-                City
+                {loadingPlaceLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -360,7 +393,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.loadingPlace === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -371,10 +404,10 @@ function ContactForm() {
                 type="text"
                 id="loadingCountry"
                 ref={loadingCountryInputRef}
-                placeholder="Loading place(country)"
+                placeholder={loadingCountry}
               />
               <label className={classes.labelName} htmlFor="loadingCountry">
-                State
+                {loadingCountryLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -389,7 +422,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.loadingCountry === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -400,10 +433,10 @@ function ContactForm() {
                 type="text"
                 ref={deliveryPlaceInputRef}
                 id="deliveryPlace"
-                placeholder="Delivery place(city)"
+                placeholder={deliveryPlace}
               />
               <label className={classes.labelName} htmlFor="deliveryPlace">
-                City
+                {deliveryPlaceLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -418,7 +451,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.deliveryPlace === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -429,10 +462,10 @@ function ContactForm() {
                 type="text"
                 ref={deliveryCountryInputRef}
                 id="deliveryCountry"
-                placeholder="Delivery place(country)"
+                placeholder={deliveryCountry}
               />
               <label className={classes.labelName} htmlFor="deliveryCountry">
-                State
+                {deliveryCountryLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -447,7 +480,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.deliveryCountry === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -458,10 +491,10 @@ function ContactForm() {
                 type="text"
                 ref={paymentTermsInputRef}
                 id="paymentTerms"
-                placeholder="Payment terms"
+                placeholder={paymentTerms}
               />
               <label className={classes.labelName} htmlFor="paymentTerms">
-                Terms
+                {paymentTermsLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -476,7 +509,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.paymentTerms === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -487,10 +520,10 @@ function ContactForm() {
                 type="text"
                 ref={handleInputRef}
                 id="handle"
-                placeholder="When answer needed"
+                placeholder={handle}
               />
               <label className={classes.labelName} htmlFor="handle">
-                Handle
+                {handleLabel}
               </label>
               <div className={classes.checked}>
                 <Image
@@ -505,7 +538,7 @@ function ContactForm() {
                   style={{ opacity: `${blure.handle === true ? 1 : 0}` }}
                   className={classes.checked_text}
                 >
-                  check
+                  {check}
                 </span>
               </div>
             </div>
@@ -514,23 +547,19 @@ function ContactForm() {
 
         <div>
           <button className={classes.button} type="submit">
-            Send
+            {send}
           </button>
           <div className={classes.message__wrapper}>
             {loadingMsg && (
-              <div className={classes.message}>
+              <div className={`${classes.message} ${classes.message_spinner}`}>
                 <Image width={40} height={40} alt="spinner" src={Spinner} />
               </div>
             )}
             {errorMsg && (
-              <div className={`${classes.message} ${classes.message_error}`}>
-                Sending failed, please contact directly
-              </div>
+              <div className={`${classes.message} ${classes.message_error}`}>{error}</div>
             )}
             {succeedMsg && (
-              <div className={`${classes.message} ${classes.message_succeed}`}>
-                Successfully sent
-              </div>
+              <div className={`${classes.message} ${classes.message_succeed}`}>{succeed}</div>
             )}
           </div>
         </div>

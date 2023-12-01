@@ -50,5 +50,37 @@
         "description": "Візьміть чашку кави чи чаю та влаштуйтесь зручніше - перевезення щойно закінчилося, а ви і не помітили)."
       }
     }
+  },
+  "CONTACTPAGE": {
+    "h1": "Зв'язатись з командою Вітам",
+    "name": "Ваше ім'я",
+    "nameLabel": "Ім'я",
+    "check": "добре",
+    "email": "name@email.com",
+    "emailLabel": "Пошта",
+    "msg": "Ваше повідомлення",
+    "msgLabel": "Смс",
+    "show": "Заповніть деталі по вантажу",
+    "cargo": "Назва вантажу",
+    "cargoLabel": "Товар",
+    "transportType": "Вид транспортного засобу",
+    "transportTypeLabel": "ТЗ",
+    "index": "Місце завантаження(індекс)",
+    "indexLabel": "Індекс",
+    "loadingPlace": "Місце завантаження(місто)",
+    "loadingPlaceLabel": "Місто",
+    "loadingCountry": "Місце завантаження(країна)",
+    "loadingCountryLabel": "Країна",
+    "deliveryPlace": "Місце призначення(місто)",
+    "deliveryPlaceLabel": "Місто",
+    "deliveryCountry": "Місце призначення(країна)",
+    "deliveryCountryLabel": "Країна",
+    "paymentTerms": "Терміни оплати",
+    "paymentTermsLabel": "Платіж",
+    "handle": "Коли потрібна відповідь?",
+    "handleLabel": "Час",
+    "send": "Відправити",
+    "error": "Збій відправлення, будь ласка, зв'яжіться напряму",
+    "succeed": "Успішно відправлено"
   }
 }

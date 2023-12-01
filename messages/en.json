@@ -50,5 +50,37 @@
         "description": "Grab a cup of coffee or tea and make yourself comfortable - the shipments have just finished and you didn't notice)."
       }
     }
+  },
+  "CONTACTPAGE": {
+    "h1": "Please contact us",
+    "name": "Who Are You?",
+    "nameLabel": "Name",
+    "check": "check",
+    "email": "name@email.com",
+    "emailLabel": "Email",
+    "msg": "Your message goes here...",
+    "msgLabel": "Msg",
+    "show": "Fill cargo details",
+    "cargo": "Cargo name",
+    "cargoLabel": "Cargo",
+    "transportType": "Vehicle type",
+    "transportTypeLabel": "Truck",
+    "index": "Loading place(index)",
+    "indexLabel": "Index",
+    "loadingPlace": "Loading place(city)",
+    "loadingPlaceLabel": "City",
+    "loadingCountry": "Loading place(country)",
+    "loadingCountryLabel": "State",
+    "deliveryPlace": "Delivery place(city)",
+    "deliveryPlaceLabel": "City",
+    "deliveryCountry": "Delivery place(country)",
+    "deliveryCountryLabel": "State",
+    "paymentTerms": "Payment terms",
+    "paymentTermsLabel": "Terms",
+    "handle": "When answer needed",
+    "handleLabel": "Handle",
+    "send": "Send",
+    "error": "Sending failed, please contact directly",
+    "succeed": "Successfully sent"
   }
 }
