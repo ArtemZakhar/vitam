@@ -49,14 +49,16 @@ function Footer({ messages }) {
       </div>
       {showMap && (
         <div onClick={handleMapView} className={classes.map}>
-          <button onClick={handleMapView}>+</button>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.6590696176554!2d30.500501315153688!3d50.42882339680495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cee6cd53ac69%3A0x445be7f57488bae3!2z0KTQhtCcINCm0LXQvdGC0YA!5e0!3m2!1suk!2sua!4v1673589746794!5m2!1suk!2sua"
-            style={{ border: 0 }}
-            fullscreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <div className={classes.map__wrapper}>
+            <button onClick={handleMapView}>+</button>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.6590696176554!2d30.500501315153688!3d50.42882339680495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cee6cd53ac69%3A0x445be7f57488bae3!2z0KTQhtCcINCm0LXQvdGC0YA!5e0!3m2!1suk!2sua!4v1673589746794!5m2!1suk!2sua"
+              style={{ border: 0 }}
+              fullscreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       )}
     </div>

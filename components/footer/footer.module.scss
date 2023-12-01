@@ -51,25 +51,30 @@
   height: 100%;
   overflow: hidden;
   background-color: $grey-500;
-  iframe {
-    position: fixed;
-    left: 50%;
-    top: 10%;
-    transform: translateX(-50%);
-    width: 500px;
-    height: 500px;
-  }
-  button {
-    color: $white-color;
-    background-color: transparent;
-    cursor: pointer;
-    transform: rotate(45deg);
-    border: 0;
-    font-weight: bold;
-    font-size: 30px;
-    left: 66.5%;
-    top: 6%;
-    position: fixed;
+  &__wrapper {
+    position: relative;
+    width: 525px;
+    height: 600px;
+    margin: 0 auto;
+    iframe {
+      position: absolute;
+      left: 0;
+      top: 70px;
+      width: 500px;
+      height: 500px;
+    }
+    button {
+      color: $white-color;
+      background-color: transparent;
+      cursor: pointer;
+      transform: rotate(45deg);
+      border: 0;
+      font-weight: bold;
+      font-size: 30px;
+      right: 0;
+      top: 40px;
+      position: absolute;
+    }
   }
 }
 
@@ -100,6 +105,16 @@
       height: 25px;
     }
   }
+  .map {
+    &__wrapper {
+      width: 325px;
+      height: 400px;
+      iframe {
+        width: 300px;
+        height: 400px;
+      }
+    }
+  }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
@@ -115,6 +130,20 @@
   .footer {
     &__info {
       font-size: 12px;
+    }
+  }
+  .map {
+    &__wrapper {
+      width: 250px;
+      height: 350px;
+      iframe {
+        top: 70px;
+        width: 220px;
+        height: 330px;
+      }
+      button {
+        right: 7px;
+      }
     }
   }
 }
