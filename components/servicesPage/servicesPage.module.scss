@@ -9,7 +9,7 @@
     .layout {
       padding: 0 30px;
       color: $grey-700;
-      h2 {
+      h1 {
         font-size: 22px;
         line-height: 72px;
         border-bottom: 1px solid $grey-500;
@@ -104,8 +104,8 @@
     .leftLayout {
       width: 200px;
       .layout {
-        padding: 0 20px;
-        h2 {
+        padding: 0 15px;
+        h1 {
           font-size: 20px;
         }
         &__item {
@@ -150,7 +150,7 @@
       width: 175px;
       .layout {
         padding: 0 5px;
-        h2 {
+        h1 {
           font-size: 16px;
         }
         &__item {
@@ -200,7 +200,7 @@
       padding: 0 20px;
       .layout {
         padding: 0 5px;
-        h2 {
+        h1 {
           font-size: 16px;
         }
         &__item {

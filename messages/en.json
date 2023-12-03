@@ -82,5 +82,22 @@
     "send": "Send",
     "error": "Sending failed, please contact directly",
     "succeed": "Successfully sent"
+  },
+  "SERVICEPAGE": {
+    "h1": "Our services:",
+    "road_Transport": "Road Transport?",
+    "sea_Freight": "Sea Freight",
+    "gropage": "Gropage",
+    "consulting": "Consulting",
+    "customs_services": "Customs services",
+    "contract_logistics": "Contract logistics",
+    "services": "Services",
+    "introduction": "Vitam Ukraine at the early beginning were focused on transporting cargo that needed temperature conditions or had a short expiration date, dangerous cargo, and FMCG. For these short 7 years company has built strong reliable team, has earned the name of a very responsible partner and on this background, we confidently look to the future expansion of the client base and new directions of service provision.",
+    "RT_descr": "Road transportation is, for many businesses and suppliers, still the most beneficial means of transporting goods.",
+    "ST_descr": "A key and integral part of the supply chain for much of the industry.",
+    "groupage_descr": "Profitable approach for those who send small consignments.",
+    "consulting_descr": "We share our knowledge and skills with pleasure",
+    "customs_descr": "We are providing customs clearance services all over Europe and in Ukraine.",
+    "contract_descr": "For those who want to receive cargo on a determined date and place and forget about the supply chain routine."
   }
 }

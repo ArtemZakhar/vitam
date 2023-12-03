@@ -1,16 +1,24 @@
 import classes from './servicesPage.module.scss';
 
-function LeftLayout() {
+function LeftLayout({
+  h1,
+  road_Transport,
+  sea_Freight,
+  gropage,
+  consulting,
+  customs_services,
+  contract_logistics,
+}) {
   return (
     <div className={classes.layout}>
-      <h2>Our services:</h2>
+      <h1>{h1}</h1>
       <div className={classes.layout__wrapper}>
-        <div className={classes.layout__item}>Road Transport</div>
-        <div className={classes.layout__item}>Sea Freight</div>
-        <div className={classes.layout__item}>Gropage</div>
-        <div className={classes.layout__item}>Consulting</div>
-        <div className={classes.layout__item}>Customs services</div>
-        <div className={classes.layout__item}>Contract logistics</div>
+        <div className={classes.layout__item}>{road_Transport}</div>
+        <div className={classes.layout__item}>{sea_Freight}</div>
+        <div className={classes.layout__item}>{gropage}</div>
+        <div className={classes.layout__item}>{consulting}</div>
+        <div className={classes.layout__item}>{customs_services}</div>
+        <div className={classes.layout__item}>{contract_logistics}</div>
       </div>
     </div>
   );

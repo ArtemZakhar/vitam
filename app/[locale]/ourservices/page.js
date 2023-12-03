@@ -1,6 +1,7 @@
 import ServicesPage from '@/components/servicesPage/servicesPage';
-import styles from '../page.module.scss';
+import { useMessages } from 'next-intl';
 
 export default function OurServices() {
-  return <ServicesPage />;
+  const messages = useMessages();
+  return <ServicesPage messages={messages.SERVICEPAGE} />;
 }
