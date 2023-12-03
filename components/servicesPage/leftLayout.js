@@ -7,7 +7,7 @@ function LeftLayout() {
       <div className={classes.layout__wrapper}>
         <div className={classes.layout__item}>Road Transport</div>
         <div className={classes.layout__item}>Sea Freight</div>
-        <div className={classes.layout__item}>Gropage transportation</div>
+        <div className={classes.layout__item}>Gropage</div>
         <div className={classes.layout__item}>Consulting</div>
         <div className={classes.layout__item}>Customs services</div>
         <div className={classes.layout__item}>Contract logistics</div>

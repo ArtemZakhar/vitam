@@ -11,6 +11,7 @@ import classes from './servicesPage.module.scss';
 export default function Cards() {
   return (
     <>
+      <h2 className={classes.introduction_title}>Services</h2>
       <div className={classes.introduction}>
         Vitamin Ukraine at the early beginning were focused on transporting cargo that needed
         temperature conditions or had a short expiration date, dangerous cargo, and FMCG. For these

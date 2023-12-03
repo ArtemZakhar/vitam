@@ -173,6 +173,9 @@
     width: 750px;
     height: 750px;
   }
+  .header__logo {
+    width: 120px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -183,5 +186,8 @@
   .menu_background {
     width: 700px;
     height: 700px;
+  }
+  .header__logo {
+    width: 120px;
   }
 }
