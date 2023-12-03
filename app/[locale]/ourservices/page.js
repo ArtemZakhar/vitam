@@ -1,5 +1,6 @@
+import ServicesPage from '@/components/servicesPage/servicesPage';
 import styles from '../page.module.scss';
 
-export default function About() {
-  return <main className={styles.main}>Services page</main>;
+export default function OurServices() {
+  return <ServicesPage />;
 }

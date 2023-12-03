@@ -17,7 +17,7 @@
 
 // Form
 .form {
-  width: 575px;
+  width: 450px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@
 }
 
 .button {
-  width: 250px;
+  width: 220px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -116,9 +116,9 @@
   text-transform: uppercase;
   position: relative;
   padding: 13px 50px;
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 16px;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   margin-bottom: 30px;
   @include ease;
   &:hover {
@@ -175,7 +175,6 @@
   }
 
   .form {
-    width: 500px;
     .field {
       margin-bottom: 12px;
     }

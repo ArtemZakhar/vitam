@@ -41,6 +41,7 @@ function ContactForm({ message }) {
     succeed,
   } = message;
 
+  console.log(message);
   const initialState = {
     name: false,
     email: false,

@@ -17,8 +17,8 @@ function OrderSteps({ messages, title }) {
 
   const [activeSteps, setActiveSteps] = useState(initialState);
 
-  const iterableArray = Object.entries(messages).map(([id, data]) => {
-    return { id, ...data };
+  const iterableArray = Object.entries(messages).map(([step, data]) => {
+    return { step, ...data };
   });
 
   function handleBar(id) {
@@ -26,13 +26,7 @@ function OrderSteps({ messages, title }) {
       return;
     }
     setActiveSteps((prewSteps) => {
-      const step = Number(
-        Object.keys(prewSteps).filter((key) => {
-          return Number(key) === id;
-        })
-      );
-
-      return { 1: false, 2: false, 3: false, 4: false, 5: false, [step]: !prewSteps[step] };
+      return { 1: false, 2: false, 3: false, 4: false, 5: false, [id]: !prewSteps[id] };
     });
   }
 
