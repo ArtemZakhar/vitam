@@ -46,6 +46,7 @@ function ServicesPage({ messages, contactFormMessages }) {
       });
       return { ...setAllToFalse, [prop]: true };
     });
+    document.querySelector("body").scrollTo(0,0);
   }
 
   return (
