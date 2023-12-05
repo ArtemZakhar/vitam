@@ -6,8 +6,7 @@ import OrderSteps from '@/components/orderSteps/orderSteps';
 
 export default function Home() {
   const t = useTranslations('MAINPAGE');
-  const messages = useMessages();
-  // console.log(messages.MAINPAGE.steps);
+  const messages = useMessages().MAINPAGE.steps;
 
   return (
     <main className={classes.main}>
@@ -23,7 +22,7 @@ export default function Home() {
           h1: t('h1'),
         }}
       />
-      <OrderSteps title={t('steps_title')} messages={messages.MAINPAGE.steps} />
+      <OrderSteps title={t('steps_title')} messages={messages} />
     </main>
   );
 }

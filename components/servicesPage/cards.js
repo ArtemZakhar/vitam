@@ -1,14 +1,9 @@
 import Image from 'next/image';
-import Road from './img/services-auto.png';
-import Sea from './img/services-ship.png';
-import Groupage from './img/groupage.jpg';
-import Consulting from './img/consulting.jpg';
-import Douane from './img/customs.jpg';
-import Contract from './img/contractLogistics.jpg';
+
 
 import classes from './servicesPage.module.scss';
 
-export default function Cards({ messages }) {
+export default function Cards({ messages, handleView, Road, Sea, Groupage, Consulting, Douane, Contract }) {
   const {
     road_Transport,
     sea_Freight,
@@ -30,14 +25,14 @@ export default function Cards({ messages }) {
       <h2 className={classes.introduction_title}>{services}</h2>
       <div className={classes.introduction}>{introduction}</div>
       <div className={classes.services}>
-        <div className={classes.services__item}>
+        <div className={classes.services__item} onClick={handleView.bind(this, 'road')}>
           <div className={classes.services__item_img_wrapper}>
             <Image src={Road} className={classes.services__item_img} alt="road" />
           </div>
           <div className={classes.services__item_title}>{road_Transport}</div>
           <div className={classes.services__item_description}>{RT_descr}</div>
         </div>
-        <div className={classes.services__item}>
+        <div className={classes.services__item} onClick={handleView.bind(this, 'sea')}>
           <div className={classes.services__item_img_wrapper}>
             <Image src={Sea} className={classes.services__item_img} alt="sea" />
           </div>

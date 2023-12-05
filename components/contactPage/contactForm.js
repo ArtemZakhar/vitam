@@ -41,7 +41,6 @@ function ContactForm({ message }) {
     succeed,
   } = message;
 
-  console.log(message);
   const initialState = {
     name: false,
     email: false,
@@ -181,7 +180,7 @@ function ContactForm({ message }) {
 
   return (
     <Fragment>
-      <h1 className={classes.h1}>{h1}</h1>
+      <h2 className={classes.h1}>{h1}</h2>
 
       <form className={classes.form} onSubmit={handleSubmit}>
         <div className={`${classes.field}`}>
@@ -202,8 +201,8 @@ function ContactForm({ message }) {
               style={{ opacity: `${blure.name === true ? 1 : 0}` }}
               className={classes.checked_icon}
               src={Done}
-              width={30}
-              height={30}
+              width={20}
+              height={20}
               alt="done"
             />
             <span
@@ -234,8 +233,8 @@ function ContactForm({ message }) {
               className={classes.checked_icon}
               src={Done}
               alt="done"
-              width={30}
-              height={30}
+              width={20}
+              height={20}
             />
             <span
               style={{ opacity: `${blure.email === true ? 1 : 0}` }}
@@ -264,8 +263,8 @@ function ContactForm({ message }) {
               className={classes.checked_icon}
               src={Done}
               alt="done"
-              width={30}
-              height={30}
+              width={20}
+              height={20}
             />
             <span
               style={{ opacity: `${blure.msg === true ? 1 : 0}` }}
@@ -300,8 +299,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.cargo === true ? 1 : 0}` }}
@@ -329,8 +328,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.transportType === true ? 1 : 0}` }}
@@ -358,8 +357,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.index === true ? 1 : 0}` }}
@@ -387,8 +386,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.loadingPlace === true ? 1 : 0}` }}
@@ -416,8 +415,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.loadingCountry === true ? 1 : 0}` }}
@@ -445,8 +444,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.deliveryPlace === true ? 1 : 0}` }}
@@ -474,8 +473,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.deliveryCountry === true ? 1 : 0}` }}
@@ -503,8 +502,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.paymentTerms === true ? 1 : 0}` }}
@@ -532,8 +531,8 @@ function ContactForm({ message }) {
                   className={classes.checked_icon}
                   src={Done}
                   alt="done"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span
                   style={{ opacity: `${blure.handle === true ? 1 : 0}` }}

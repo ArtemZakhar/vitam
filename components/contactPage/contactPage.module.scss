@@ -11,6 +11,7 @@
 .h1 {
   margin-bottom: 40px;
   font-size: 32px;
+  text-align: center;
   text-transform: uppercase;
   color: $grey-700;
 }
@@ -134,7 +135,7 @@
 
 .checked {
   position: absolute;
-  top: 2px;
+  top: 5px;
   left: 10px;
   color: $white-color;
 }

@@ -47,7 +47,7 @@
 }
 
 .menu_list {
-  display: none;
+  opacity: 0;
   &_lng {
     display: flex;
     justify-content: space-around;
@@ -96,7 +96,8 @@
 
 .navigation_block:hover .menu_list {
   margin-top: 20px;
-  display: block;
+  animation: menuAppears 0.2s ease-out;
+  opacity: 1;
 }
 
 .navigation_block:hover .menu_background {
@@ -111,6 +112,18 @@
 .menu_list_lng button:hover {
   background-color: rgba(207, 204, 255, 0.2);
   animation: linkAnimation 0.2s ease-out;
+}
+
+@keyframes menuAppears {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 40%;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes linkAnimation {
