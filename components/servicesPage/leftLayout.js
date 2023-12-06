@@ -20,10 +20,14 @@ function LeftLayout({
         <div className={classes.layout__item} onClick={handleView.bind(this, 'sea')}>
           {sea_Freight}
         </div>
-        <div className={classes.layout__item}>{gropage}</div>
-        <div className={classes.layout__item}>{consulting}</div>
-        <div className={classes.layout__item}>{customs_services}</div>
-        <div className={classes.layout__item}>{contract_logistics}</div>
+        <div className={classes.layout__item} onClick={handleView.bind(this, 'groupage')}>
+          {gropage}
+        </div>
+        <div className={classes.layout__item} onClick={handleView.bind(this, 'consult')}>
+          {consulting}
+        </div>
+        <div className={classes.layout__item} onClick={handleView.bind(this, 'customs_services')}>{customs_services}</div>
+        <div className={classes.layout__item} onClick={handleView.bind(this, 'contract')}>{contract_logistics}</div>
       </div>
     </div>
   );

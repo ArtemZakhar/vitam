@@ -26,7 +26,11 @@ function OrderSteps({ messages, title }) {
       return;
     }
     setActiveSteps((prewSteps) => {
-      return { 1: false, 2: false, 3: false, 4: false, 5: false, [id]: !prewSteps[id] };
+      const setAllToFalse = prewSteps;
+      for (let key of Object.keys(setAllToFalse)) {
+        setAllToFalse[key] = false;
+      }
+      return { ...setAllToFalse, [id]: true };
     });
   }
 

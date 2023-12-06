@@ -19,12 +19,12 @@ function ServicesPage({ messages, contactFormMessages }) {
     home: true,
     road: false,
     sea: false,
+    groupage: false,
     consult: false,
     customs: false,
     contract: false,
   };
   const [showedInformation, setShowedInformation] = useState(initialState);
-
   const {
     h1,
     road_Transport,
@@ -41,12 +41,13 @@ function ServicesPage({ messages, contactFormMessages }) {
     }
 
     setShowedInformation((prevState) => {
-      const setAllToFalse = Object.keys(prevState).map((key) => {
-        return { [key]: false };
-      });
+      const setAllToFalse = prevState;
+      for (let key of Object.keys(setAllToFalse)) {
+        setAllToFalse[key] = false;
+      }
       return { ...setAllToFalse, [prop]: true };
     });
-    document.querySelector("body").scrollTo(0,0);
+    document.querySelector('body').scrollTo(0, 0);
   }
 
   return (
@@ -86,6 +87,38 @@ function ServicesPage({ messages, contactFormMessages }) {
         {showedInformation.sea && (
           <div className={classes.cards}>
             <Service img={Sea} messages={messages.service.sea} handleView={handleView} />
+          </div>
+        )}
+        {showedInformation.groupage && (
+          <div className={classes.cards}>
+            <Service img={Groupage} messages={messages.service.groupage} handleView={handleView} />
+          </div>
+        )}
+        {showedInformation.consult && (
+          <div className={classes.cards}>
+            <Service
+              img={Consulting}
+              messages={messages.service.consulting}
+              handleView={handleView}
+            />
+          </div>
+        )}
+        {showedInformation.customs_services && (
+          <div className={classes.cards}>
+            <Service
+              img={Douane}
+              messages={messages.service.customs_services}
+              handleView={handleView}
+            />
+          </div>
+        )}
+        {showedInformation.contract && (
+          <div className={classes.cards}>
+            <Service
+              img={Contract}
+              messages={messages.service.contract_logistics}
+              handleView={handleView}
+            />
           </div>
         )}
       </div>
