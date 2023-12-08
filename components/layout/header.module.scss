@@ -13,6 +13,8 @@
   width: 200px;
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  right: -200px;
 }
 
 .hamburger_menu {
@@ -22,6 +24,9 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: fixed;
+  right: 60px;
+  top: 60px;
 }
 
 .bar {
@@ -95,14 +100,15 @@
 }
 
 .navigation_block:hover .menu_list {
-  margin-top: 20px;
+  right: 20px;
+  top: 60px;
   animation: menuAppears 0.2s ease-out;
   opacity: 1;
 }
 
 .navigation_block:hover .menu_background {
   animation: bubblePresent 0.2s ease-out;
-  transform: translate(-2300px, -200px);
+  transform: translate(-2220px, -300px);
 }
 
 .menu_list > ul > li a:hover {
@@ -189,6 +195,10 @@
   .header__logo {
     width: 120px;
   }
+
+  .navigation_block:hover .menu_background {
+    transform: translate(-2250px, -300px);
+  }
 }
 
 @media (max-width: 575px) {
@@ -202,5 +212,9 @@
   }
   .header__logo {
     width: 120px;
+  }
+
+  .navigation_block:hover .menu_background {
+    transform: translate(-2320px, -280px);
   }
 }
