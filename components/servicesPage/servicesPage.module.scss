@@ -298,6 +298,9 @@
       border: none;
       box-shadow: none;
       width: 300px;
+      &__item {
+        padding-left: 0px;
+      }
       .introduction {
         padding: 20px 20px 0 20px;
         font-size: 13px;

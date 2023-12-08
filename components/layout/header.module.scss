@@ -50,6 +50,9 @@
   position: fixed;
   z-index: 4;
 }
+.hamburger_menu {
+  z-index: 5;
+}
 
 .menu_list {
   opacity: 0;
@@ -93,22 +96,28 @@
   border-radius: 100%;
 }
 
-.navigation_block:hover .bar.upper_bar,
-.navigation_block:hover .bar.lower_bar,
-.navigation_block:hover .bar.middle_bar {
+.active:hover .bar.middle_bar {
   transform: translatex(1000px);
 }
 
-.navigation_block:hover .menu_list {
-  right: 20px;
-  top: 60px;
+.active:hover .bar.upper_bar {
+  transform: rotate(45deg);
+}
+
+.active:hover .bar.lower_bar {
+  transform: rotate(-45deg);
+}
+
+.active:hover .menu_list {
+  right: 70px;
+  top: 70px;
   animation: menuAppears 0.2s ease-out;
   opacity: 1;
 }
 
-.navigation_block:hover .menu_background {
+.active:hover .menu_background {
   animation: bubblePresent 0.2s ease-out;
-  transform: translate(-2220px, -300px);
+  transform: translate(-2250px, -300px);
 }
 
 .menu_list > ul > li a:hover {
@@ -196,8 +205,13 @@
     width: 120px;
   }
 
-  .navigation_block:hover .menu_background {
+  .active:hover .menu_background {
     transform: translate(-2250px, -300px);
+  }
+
+  .active:hover .menu_list {
+    right: 30px;
+    top: 60px;
   }
 
   .hamburger_menu {
@@ -218,8 +232,13 @@
     width: 120px;
   }
 
-  .navigation_block:hover .menu_background {
+  .active:hover .menu_background {
     transform: translate(-2320px, -280px);
+  }
+
+  .active:hover .menu_list {
+    right: 30px;
+    top: 60px;
   }
 
   .hamburger_menu {
