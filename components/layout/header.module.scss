@@ -199,6 +199,10 @@
   .navigation_block:hover .menu_background {
     transform: translate(-2250px, -300px);
   }
+
+  .hamburger_menu {
+    right: 30px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -216,5 +220,9 @@
 
   .navigation_block:hover .menu_background {
     transform: translate(-2320px, -280px);
+  }
+
+  .hamburger_menu {
+    right: 20px;
   }
 }
