@@ -5,5 +5,5 @@ export default function OurServices() {
   const messages = useMessages().SERVICEPAGE;
   const contactFormMessages = useMessages().CONTACTPAGE;
 
-  return <ServicesPage messages={messages} contactFormMessages={contactFormMessages}/>;
+  return <ServicesPage messages={messages} contactFormMessages={contactFormMessages} />;
 }

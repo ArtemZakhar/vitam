@@ -20,9 +20,9 @@ function Header({ messages }) {
       <Link className={classes.header__logo} href="/">
         <Image
           src="/logo.png"
+          priority={true}
           width={150}
           height={100}
-          style={{ display: 'block', position: 'relative', width: '100%', height: '100%' }}
           alt="vitam logo"
         />
       </Link>

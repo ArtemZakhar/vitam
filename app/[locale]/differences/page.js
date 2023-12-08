@@ -1,5 +1,12 @@
+import DifferencesPage from '@/components/differencesPage/differencesPage';
 import styles from '../page.module.scss';
+import { useMessages } from 'next-intl';
 
 export default function Differences() {
-  return <main className={styles.main}>Differences page</main>;
+  const messages = useMessages().DIFFERENCEPAGE;
+  return (
+    <>
+      <DifferencesPage messages={messages} />
+    </>
+  );
 }

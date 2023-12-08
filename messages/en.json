@@ -151,5 +151,18 @@
         "benefits_descr": "We do everything right and consolidate the relevant performers around us. If you are looking for smart performance logistics - your journey has finished because you have found us!"
       }
     }
+  },
+  "DIFFERENCEPAGE": {
+    "h1": "Our Differences",
+    "monitoring": "Monitoring",
+    "monitoring_context": "Controlling involved vehicles in real-time 2 times a day.",
+    "report": "Report",
+    "report_context": "We are providing reporting in a convenient for the client form.",
+    "always": "24 / 7",
+    "always_context": "The principle of our team is to work 24/7. We are always in touch because logistics never sleep.",
+    "portfolio": "Portfolio",
+    "portfolio_context": "Our portfolio consists exclusively of reliable suppliers and clients.",
+    "competition": "Competition",
+    "competition_context": "Internal competition is missing. As a team, we are purposeful for a result."
   }
 }

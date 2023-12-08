@@ -1,0 +1,211 @@
+@import '../../app/variables.scss';
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  overflow: hidden;
+  width: 600px;
+  height: 865px;
+  h1 {
+    margin-bottom: 40px;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $grey-700;
+  }
+  .difference {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 5px 0;
+    background-size: 100% auto;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.31, 0.65, 0.95);
+    &.active {
+      flex-grow: 10000;
+      margin: 0px;
+      max-height: 500px;
+      border-radius: 40px;
+      background-size: cover;
+      .shadow {
+        box-shadow: inset 0 -150px 120px -120px $dark-color, inset 0 -150px 120px -100px $dark-color;
+      }
+      .label {
+        bottom: 30px;
+        left: 20px;
+        .icon {
+          margin-top: 10px;
+        }
+        .info > div {
+          left: 0px;
+          opacity: 1;
+          width: 90%;
+          overflow: hidden;
+        }
+      }
+    }
+    &:not(.active) {
+      flex-grow: 1;
+      border-radius: 30px;
+      transition: 0.2s cubic-bezier(0.95, 0.65, 0.11, 0.01);
+      .label {
+        bottom: 0px;
+        left: 20px;
+        .info > div {
+          opacity: 0;
+        }
+      }
+    }
+    .shadow {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      height: 120px;
+      transition: 0.5s cubic-bezier(0.05, 0.31, 0.65, 0.95);
+    }
+    .label {
+      display: flex;
+      position: absolute;
+      height: 50px;
+      transition: 0.5s cubic-bezier(0.05, 0.31, 0.65, 0.95);
+      .icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: $white-color;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10px;
+        color: $white-color;
+        height: 65px;
+        width: 500px;
+        .title {
+          position: relative;
+          font-weight: bold;
+          font-size: 20px;
+          transition: 0.5s cubic-bezier(0.05, 0.31, 0.65, 0.95), opacity 0.5s ease-out;
+        }
+        .description {
+          position: relative;
+          font-size: 15px;
+          transition-delay: 0.1s;
+          transition: 0.5s cubic-bezier(0.05, 0.31, 0.65, 0.95), opacity 0.5s ease-out;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    width: 550px;
+    height: 765px;
+    h1 {
+      font-size: 26px;
+    }
+    .difference {
+      &.active {
+        max-height: 400px;
+      }
+
+      .shadow {
+        height: 100px;
+      }
+      .label {
+        .icon {
+          width: 35px;
+          height: 35px;
+        }
+        .info {
+          height: 65px;
+          width: 450px;
+          .title {
+            font-size: 18px;
+          }
+          .description {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .container {
+    width: 450px;
+    height: 700px;
+    h1 {
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+    .difference {
+      &.active {
+        max-height: 350px;
+      }
+      .label {
+        .info {
+          height: 65px;
+          width: 420px;
+          .title {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    width: 250px;
+    height: 700px;
+    h1 {
+      font-size: 26px;
+    }
+    .difference {
+      &.active {
+        max-height: 300px;
+        .shadow {
+          box-shadow: inset 0 -150px 160px -100px $dark-color,
+            inset 0 -150px 160px -100px $dark-color;
+          height: 140px;
+        }
+        .label {
+          bottom: 60px;
+          left: 15px;
+          .icon {
+            width: 30px;
+            height: 30px;
+          }
+          .info {
+            height: 95px;
+            width: 200px;
+            .title {
+              font-size: 16px;
+            }
+            .description {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+      &:not(.active) {
+        .label {
+          left: 15px;
+        } 
+      }
+    }
+  }
+}

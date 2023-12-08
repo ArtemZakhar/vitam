@@ -1,8 +1,8 @@
-import MainPage from '@/components/mainPage/mainPage';
-import classes from './page.module.scss';
 import { useTranslations } from 'next-intl';
 import { useMessages } from 'next-intl';
-import OrderSteps from '@/components/orderSteps/orderSteps';
+import MainPage from '@/components/mainPage/mainPage';
+import OrderSteps from '@/components/mainPage/orderSteps/orderSteps';
+import classes from './page.module.scss';
 
 export default function Home() {
   const t = useTranslations('MAINPAGE');
