@@ -1,5 +1,5 @@
-import styles from '../page.module.scss';
+import AboutPage from '@/components/aboutPage/aboutPage';
 
 export default function About() {
-  return <main className={styles.main}>About page</main>;
+  return <AboutPage />;
 }

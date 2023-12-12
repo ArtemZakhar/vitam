@@ -5,12 +5,11 @@ function ViewSteps({ arr, activeSteps, handleBar }) {
   return arr.map(({ id, name }) => {
     return (
       <Fragment key={id}>
-        <div className={classes.steps__item}>
+        <div className={classes.steps__item} onClick={() => handleBar(id)}>
           <div
             className={`${classes.steps__item_number} ${
               activeSteps[id] && classes.steps__item_number_active
             }`}
-            onClick={() => handleBar(id)}
           >
             {id}
           </div>

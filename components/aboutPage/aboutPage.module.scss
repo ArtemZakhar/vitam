@@ -1,0 +1,93 @@
+@import '../../app/variables.scss';
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  .mission {
+    height: 700px;
+    margin-top: 40px;
+    .title {
+      position: relative;
+      margin: 0 auto;
+      height: 200px;
+      width: 600px;
+      text-align: center;
+      border-bottom: 1px solid $grey-500;
+      box-shadow: 0px 2px 0px $grey-100;
+      h1 {
+        font-size: 32px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $grey-700;
+      }
+      p {
+        line-height: 14px;
+        margin-top: 20px;
+        position: absolute;
+        right: 0;
+        width: 65%;
+      }
+    }
+    .goals__wrapper {
+      height: 100vh;
+      width: 90%;
+      height: 400px;
+      margin: 0 auto;
+      margin-top: 60px;
+      overflow-x: hidden;
+      color: $grey-700;
+      padding: 20px 40px;
+      box-shadow: 1px 1px 20px $purple-700, -1px -1px 20px $purple-700;
+      &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+      }
+      h2 {
+        width: 1000px;
+        text-transform: uppercase;
+        font-size: 28px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      ul {
+        width: 1000px;
+        list-style-type: none;
+        margin: 0 auto;
+        margin-top: 40px;
+        padding: 30px 0;
+        position: relative;
+        li {
+          font-size: 28px;
+          font-weight: bold;
+          line-height: 55px;
+          position: relative;
+          height: 200px;
+          padding: 40px 0;
+          border-bottom: 1px solid $grey-500;
+          box-shadow: 0 2px $grey-100;
+          p {
+            position: absolute;
+            right: 0;
+            width: 600px;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  .about {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 90%;
+    .wrapper {
+      margin: 0 auto;
+      width: 1000px;
+      .description {
+        padding: 50px 100px;
+      }
+    }
+  }
+}
