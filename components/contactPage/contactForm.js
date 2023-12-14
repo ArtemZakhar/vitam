@@ -6,6 +6,7 @@ import Image from 'next/image';
 import classes from './contactPage.module.scss';
 import Done from './icons/done.png';
 import Spinner from './icons/spinner.svg';
+import CargoInputList from './cargoInputList';
 
 function ContactForm({ message }) {
   const {
@@ -18,24 +19,7 @@ function ContactForm({ message }) {
     msg,
     msgLabel,
     show,
-    cargo,
-    cargoLabel,
-    transportType,
-    transportTypeLabel,
-    index,
-    indexLabel,
-    loadingPlace,
-    loadingPlaceLabel,
-    loadingCountry,
-    loadingCountryLabel,
-    deliveryPlace,
-    deliveryPlaceLabel,
-    deliveryCountry,
-    deliveryCountryLabel,
-    paymentTerms,
-    paymentTermsLabel,
-    handle,
-    handleLabel,
+    cargo_details,
     send,
     error,
     succeed,
@@ -64,18 +48,8 @@ function ContactForm({ message }) {
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const msgInputRef = useRef();
-  const cargoInputRef = useRef('');
-  const transportTypeInputRef = useRef('');
-  const indexInputRef = useRef('');
-  const loadingPlaceInputRef = useRef('');
-  const loadingCountryInputRef = useRef('');
-  const deliveryPlaceInputRef = useRef('');
-  const deliveryCountryInputRef = useRef('');
-  const paymentTermsInputRef = useRef('');
-  const handleInputRef = useRef('');
 
   // blure and styles
-
   function handleBlur(e, name) {
     if (e.target.value === '') {
       setBlure((prevState) => {
@@ -92,6 +66,12 @@ function ContactForm({ message }) {
   }
 
   //Submit form
+  let cargoData = {};
+  function getCargoData(value) {
+    value.map((item) => {
+      return (cargoData[Object.keys(item)] = item[Object.keys(item)]);
+    });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -101,29 +81,20 @@ function ContactForm({ message }) {
     const enteredName = nameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredMsg = msgInputRef.current.value;
-    const enteredCargo = cargoInputRef.current.value;
-    const enteredTransportType = transportTypeInputRef.current.value;
-    const enteredIndex = indexInputRef.current.value;
-    const enteredLoadingPlace = loadingPlaceInputRef.current.value;
-    const enteredLoadingCountry = loadingCountryInputRef.current.value;
-    const enteredDeliveryPlace = deliveryPlaceInputRef.current.value;
-    const enteredDeliveryCountry = deliveryCountryInputRef.current.value;
-    const enteredPaymentTerms = paymentTermsInputRef.current.value;
-    const enteredHandle = handleInputRef.current.value;
 
     const FormData = {
       name: enteredName,
       email: enteredEmail,
       msg: enteredMsg,
-      cargo: enteredCargo,
-      transportType: enteredTransportType,
-      index: enteredIndex,
-      loadingPlace: enteredLoadingPlace,
-      loadingCountry: enteredLoadingCountry,
-      deliveryPlace: enteredDeliveryPlace,
-      deliveryCountry: enteredDeliveryCountry,
-      paymentTerms: enteredPaymentTerms,
-      handle: enteredHandle,
+      cargo: cargoData.cargo || 'no data',
+      transportType: cargoData.transportType || 'no data',
+      index: cargoData.index || 'no data',
+      loadingPlace: cargoData.loadingPlace || 'no data',
+      loadingCountry: cargoData.loadingCountry || 'no data',
+      deliveryPlace: cargoData.deliveryPlace || 'no data',
+      deliveryCountry: cargoData.deliveryCountry || 'no data',
+      paymentTerms: cargoData.paymentTerms || 'no data',
+      handle: cargoData.handle || 'no data',
     };
 
     fetch('/api/mailer', {
@@ -131,7 +102,7 @@ function ContactForm({ message }) {
       body: JSON.stringify(FormData),
     })
       .then((res) => res.json())
-      .then((response) => {
+      .then((res) => {
         setLoadingMsg(false);
         setSucceedMsg(true);
         const timer = setTimeout(() => {
@@ -141,14 +112,6 @@ function ContactForm({ message }) {
         nameInputRef.current.value = '';
         emailInputRef.current.value = '';
         msgInputRef.current.value = '';
-        cargoInputRef.current.value = '';
-        transportTypeInputRef.current.value = '';
-        indexInputRef.current.value = '';
-        loadingPlaceInputRef.current.value = '';
-        loadingCountryInputRef.current.value = '';
-        deliveryPlaceInputRef.current.value = '';
-        paymentTermsInputRef.current.value = '';
-        handleInputRef.current.value = '';
 
         setBlure({
           name: false,
@@ -169,7 +132,7 @@ function ContactForm({ message }) {
         return () => clearTimeout(timer);
       })
       .catch((err) => {
-        console.log(`I'm here`);
+        console.log(err);
         setErrorMsg(true);
         const timer = setTimeout(() => {
           setErrorMsg(false);
@@ -177,6 +140,12 @@ function ContactForm({ message }) {
         return () => clearTimeout(timer);
       });
   }
+
+  // data for CargoInputsList
+
+  const dataForInputList = Object.entries(cargo_details).map(([id, info]) => {
+    return { id, ...info };
+  });
 
   return (
     <Fragment>
@@ -281,267 +250,13 @@ function ContactForm({ message }) {
 
         {moreLines && (
           <>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'cargo')}
-                className={`${classes.inputName} ${blure.cargo && classes.focused}`}
-                type="text"
-                id="cargo"
-                ref={cargoInputRef}
-                placeholder={cargo}
-              />
-              <label className={classes.labelName} htmlFor="cargo">
-                {cargoLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.cargo === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.cargo === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'transportType')}
-                className={`${classes.inputName} ${blure.transportType && classes.focused}`}
-                type="text"
-                ref={transportTypeInputRef}
-                id="transportType"
-                placeholder={transportType}
-              />
-              <label className={classes.labelName} htmlFor="transportType">
-                {transportTypeLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.transportType === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.transportType === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'index')}
-                className={`${classes.inputName} ${blure.index && classes.focused}`}
-                type="text"
-                id="index"
-                ref={indexInputRef}
-                placeholder={index}
-              />
-              <label className={classes.labelName} htmlFor="index">
-                {indexLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.index === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.index === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'loadingPlace')}
-                className={`${classes.inputName} ${blure.loadingPlace && classes.focused}`}
-                type="text"
-                id="loadingPlace"
-                ref={loadingPlaceInputRef}
-                placeholder={loadingPlace}
-              />
-              <label className={classes.labelName} htmlFor="loadingPlace">
-                {loadingPlaceLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.loadingPlace === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.loadingPlace === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'loadingCountry')}
-                className={`${classes.inputName} ${blure.loadingCountry && classes.focused}`}
-                type="text"
-                id="loadingCountry"
-                ref={loadingCountryInputRef}
-                placeholder={loadingCountry}
-              />
-              <label className={classes.labelName} htmlFor="loadingCountry">
-                {loadingCountryLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.loadingCountry === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.loadingCountry === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'deliveryPlace')}
-                className={`${classes.inputName} ${blure.deliveryPlace && classes.focused}`}
-                type="text"
-                ref={deliveryPlaceInputRef}
-                id="deliveryPlace"
-                placeholder={deliveryPlace}
-              />
-              <label className={classes.labelName} htmlFor="deliveryPlace">
-                {deliveryPlaceLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.deliveryPlace === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.deliveryPlace === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'deliveryCountry')}
-                className={`${classes.inputName} ${blure.deliveryCountry && classes.focused}`}
-                type="text"
-                ref={deliveryCountryInputRef}
-                id="deliveryCountry"
-                placeholder={deliveryCountry}
-              />
-              <label className={classes.labelName} htmlFor="deliveryCountry">
-                {deliveryCountryLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.deliveryCountry === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.deliveryCountry === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'paymentTerms')}
-                className={`${classes.inputName} ${blure.paymentTerms && classes.focused}`}
-                type="text"
-                ref={paymentTermsInputRef}
-                id="paymentTerms"
-                placeholder={paymentTerms}
-              />
-              <label className={classes.labelName} htmlFor="paymentTerms">
-                {paymentTermsLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.paymentTerms === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.paymentTerms === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
-            <div className={`${classes.field}`}>
-              <input
-                onBlur={(e) => handleBlur(e, 'handle')}
-                className={`${classes.inputName} ${blure.handle && classes.focused}`}
-                type="text"
-                ref={handleInputRef}
-                id="handle"
-                placeholder={handle}
-              />
-              <label className={classes.labelName} htmlFor="handle">
-                {handleLabel}
-              </label>
-              <div className={classes.checked}>
-                <Image
-                  style={{ opacity: `${blure.handle === true ? 1 : 0}` }}
-                  className={classes.checked_icon}
-                  src={Done}
-                  alt="done"
-                  width={20}
-                  height={20}
-                />
-                <span
-                  style={{ opacity: `${blure.handle === true ? 1 : 0}` }}
-                  className={classes.checked_text}
-                >
-                  {check}
-                </span>
-              </div>
-            </div>
+            <CargoInputList
+              messages={dataForInputList}
+              handleBlur={handleBlur}
+              check={check}
+              blure={blure}
+              getCargoData={getCargoData}
+            />
           </>
         )}
 

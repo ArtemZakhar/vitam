@@ -61,24 +61,44 @@
     "msg": "Your message goes here...",
     "msgLabel": "Msg",
     "show": "Fill cargo details",
-    "cargo": "Cargo name",
-    "cargoLabel": "Cargo",
-    "transportType": "Vehicle type",
-    "transportTypeLabel": "Truck",
-    "index": "Loading place(index)",
-    "indexLabel": "Index",
-    "loadingPlace": "Loading place(city)",
-    "loadingPlaceLabel": "City",
-    "loadingCountry": "Loading place(country)",
-    "loadingCountryLabel": "State",
-    "deliveryPlace": "Delivery place(city)",
-    "deliveryPlaceLabel": "City",
-    "deliveryCountry": "Delivery place(country)",
-    "deliveryCountryLabel": "State",
-    "paymentTerms": "Payment terms",
-    "paymentTermsLabel": "Terms",
-    "handle": "When answer needed",
-    "handleLabel": "Handle",
+    "cargo_details": {
+      "cargo": {
+        "name": "Cargo name",
+        "label": "Cargo"
+      },
+      "transportType": {
+        "name": "Vehicle type",
+        "label": "Truck"
+      },
+      "index": {
+        "name": "Loading place(index)",
+        "label": "Index"
+      },
+      "loadingPlace": {
+        "name": "Loading place(city)",
+        "label": "City"
+      },
+      "loadingCountry": {
+        "name": "Loading place(country)",
+        "label": "State"
+      },
+      "deliveryPlace": {
+        "name": "Delivery place(city)",
+        "label": "City"
+      },
+      "deliveryCountry": {
+        "name": "Delivery place(country)",
+        "label": "State"
+      },
+      "paymentTerms": {
+        "name": "Payment terms",
+        "label": "Terms"
+      },
+      "handle": {
+        "name": "When answer needed",
+        "label": "Handle"
+      }
+    },
     "send": "Send",
     "error": "Sending failed, please contact directly",
     "succeed": "Successfully sent"
@@ -154,15 +174,86 @@
   },
   "DIFFERENCEPAGE": {
     "h1": "Our Differences",
-    "monitoring": "Monitoring",
-    "monitoring_context": "Controlling involved vehicles in real-time 2 times a day.",
-    "report": "Report",
-    "report_context": "We are providing reporting in a convenient for the client form.",
-    "always": "24 / 7",
-    "always_context": "The principle of our team is to work 24/7. We are always in touch because logistics never sleep.",
-    "portfolio": "Portfolio",
-    "portfolio_context": "Our portfolio consists exclusively of reliable suppliers and clients.",
-    "competition": "Competition",
-    "competition_context": "Internal competition is missing. As a team, we are purposeful for a result."
+    "differences": {
+      "monitoring": {
+        "name": "Monitoring",
+        "context": "Controlling involved vehicles in real-time 2 times a day.",
+        "img": "monitoring"
+      },
+      "report": {
+        "name": "Report",
+        "context": "We are providing reporting in a convenient for the client form.",
+        "img": "reporting"
+      },
+      "always": {
+        "name": "24 / 7",
+        "context": "The principle of our team is to work 24/7. We are always in touch because logistics never sleep.",
+        "img": "24.7"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "context": "Our portfolio consists exclusively of reliable suppliers and clients.",
+        "img": "portfolio"
+      },
+      "competition": {
+        "name": "Competition",
+        "context": "Internal competition is missing. As a team, we are purposeful for a result.",
+        "img": "competition"
+      }
+    }
+  },
+  "ABOUTUSPAGE": {
+    "aboutCompanySection": {
+      "mission": "OUR GOAL - IS TO RELIABLY SERVE THE CLIENT SUPPLY CHAIN.",
+      "mission_descr": "We are not transferring information, we are not in-between we are bringing the product to the client",
+      "values_title": "VITAM UKRAINE TEAM VALUES",
+      "values": {
+        "value_1": {
+          "name": "We work for a customer",
+          "description": "Everything starts with a customer: he studies demand and determines supply, which makes the supply chain possible. Our job affects demand satisfaction that's why it has to be qualified."
+        },
+        "value_2": {
+          "name": "Details matter",
+          "description": "For us, it is essential to know who is on our team and who our clients and carriers are. Trust is very important and we cannot fail."
+        },
+        "value_3": {
+          "name": "Be predictable",
+          "description": "All our moves have to be predictable to exclude misunderstanding and to improve reliability."
+        },
+        "value_4": {
+          "name": "Be grateful",
+          "description": "Don't miss an opportunity to thank for work. Every shipment that proceeds without accidents is provided by someone: it can be a client or shipper, carrier or customs broker. You should be grateful even if you have not seen a specific attitude."
+        }
+      },
+      "about_company": "Vitam Ukraine started from scratch at a moment when things changed a lot in the market: transportation permissions were run out one month before the year ended. Suddenly it was not enough to be reliable, to pay on time and to be a professional. Suddenly it became very important to have arguments about why freight prices should be higher in summer and lower in winter. Suddenly your experience of reducing the degree of tension with your partners had become everyday useful. For the new no-name market player, it was an over-complicated task. \n But we passed it without losing partners or reputation. Those trials made our team united, more resilient and confident in the positive end of the case on which you put enough effort. \n During this short time, the team gained a lot of experience and developed many flexible approaches to providing complex logistics services.",
+      "comment": "Despite Moscow's aggression against Ukraine, we do not stop providing high-quality logistics services and stand together with faith in the Ukraine Armed Forces and Victory.",
+      "name": "Kateryna Gorkusha",
+      "position": "Vitam Ukraine LLC CEO"
+    },
+    "partnersSection": {
+      "trust": "We are trusted:",
+      "slider": {
+        "wb": {
+          "id": "wb",
+          "descr": "Good Wine — retail, which specializes in selling organic, natural, biodynamic products and wines from all over the world."
+        },
+        "metro": {
+          "id": "metro",
+          "descr": "Metro — international trade wholesale company that specializes in servicing HoReCa and private entrepreneurs."
+        },
+        "unilin": {
+          "id": "unilin",
+          "descr": "Unilin — a Belgian manufacturer of floor coverings known for its brands Quick-Step, Pergo, Balterio."
+        },
+        "elopack": {
+          "id": "elopack",
+          "descr": "Elopack — the worls's leading supplier of cardboard packaging and filling equipment."
+        },
+        "ecolab": {
+          "id": "ecolab",
+          "descr": "Ecolab — a global leader in professional hygiene, energy, water, technology and services that protect people and vital resources."
+        }
+      }
+    }
   }
 }
