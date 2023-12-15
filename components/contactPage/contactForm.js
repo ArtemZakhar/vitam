@@ -64,8 +64,10 @@ function ContactForm({ message }) {
   //Submit form
   let cargoData = {};
   function getCargoData(value) {
-    value.map((item) => {
-      return (cargoData[Object.keys(item)] = item[Object.keys(item)]);
+    value.forEach((item) => {
+      for (let [key, value] of Object.entries(item)) {
+        cargoData[key] = value;
+      }
     });
   }
 

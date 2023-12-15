@@ -105,20 +105,34 @@
   },
   "SERVICEPAGE": {
     "h1": "Our services:",
-    "road_Transport": "Road Transport?",
-    "sea_Freight": "Sea Freight",
-    "gropage": "Gropage",
-    "consulting": "Consulting",
-    "customs_services": "Customs services",
-    "contract_logistics": "Contract logistics",
     "services": "Services",
     "introduction": "Vitam Ukraine at the early beginning were focused on transporting cargo that needed temperature conditions or had a short expiration date, dangerous cargo, and FMCG. For these short 7 years company has built strong reliable team, has earned the name of a very responsible partner and on this background, we confidently look to the future expansion of the client base and new directions of service provision.",
-    "RT_descr": "Road transportation is, for many businesses and suppliers, still the most beneficial means of transporting goods.",
-    "ST_descr": "A key and integral part of the supply chain for much of the industry.",
-    "groupage_descr": "Profitable approach for those who send small consignments.",
-    "consulting_descr": "We share our knowledge and skills with pleasure",
-    "customs_descr": "We are providing customs clearance services all over Europe and in Ukraine.",
-    "contract_descr": "For those who want to receive cargo on a determined date and place and forget about the supply chain routine.",
+    "cards": {
+      "road": {
+        "service": "Road Transport",
+        "description": "Road transportation is, for many businesses and suppliers, still the most beneficial means of transporting goods."
+      },
+      "sea": {
+        "service": "Sea Freight",
+        "description": "A key and integral part of the supply chain for much of the industry."
+      },
+      "groupage": {
+        "service": "Groupage",
+        "description": "Profitable approach for those who send small consignments."
+      },
+      "consulting": {
+        "service": "Consulting",
+        "description": "We share our knowledge and skills with pleasure."
+      },
+      "customs": {
+        "service": "Customs services",
+        "description": "We are providing customs clearance services all over Europe and in Ukraine."
+      },
+      "contract": {
+        "service": "Contract logistics",
+        "description": "For those who want to receive cargo on a determined date and place and forget about the supply chain routine."
+      }
+    },
     "service": {
       "road": {
         "generalDescription": "Road transportation is a quite cheap way of freight shipping. It is very best for short distances, has high flexibility, and needs fewer resources for preparation. Dangerous flammable, and toxic products are allowed to be carried on road transport (sea and air transport have their limitation). Every year this market faces new rules and waves of changes in economics. On the other side, new technologies provide a very convenient way of controlling and planning costs which provides higher competitive and predictable. Our team keeps in mind all risks and has debugged processes for your reliable supply chain.",
@@ -154,14 +168,14 @@
         "benefits": "Benefits of working with Vitam Ukraine.",
         "benefits_descr": "We are fair to our clients. If the topic of the consultation is well known to us - we provide comprehensive consultation with examples, solutions, answers, and support (depending on the request). If there is a gap - we truly say that there is not enough information but still we investigate the issue, ask for consultations with our partners, and come back with response. We believe that logistics can be easy only when to support each other and have trusting relations with your partners."
       },
-      "customs_services": {
+      "customs": {
         "generalDescription": "We provide customs clearance services in EU and in Ukraine (Kyiv, Lviv, Kovel). We help prepare documents necessary for customs clearance as well as any required certificates or permits.",
         "cargo_types": "The service list",
         "cargo_types_descr": "We provide below services: \n- declare in all customs regimes (import, export, transit and others);\n- issue declaration type «EA»;\n- classify the goods, calculate customs payments;\n- represent clients' interests in licensing authorities;\n- check the accompanying documentation.",
         "benefits": "Benefits of working with Vitam Ukraine.",
         "benefits_descr": "We provide customs services depending on the business needs of our partners."
       },
-      "contract_logistics": {
+      "contract": {
         "generalDescription": "Contract logistics involves the outsourcing of resource management tasks by one company to a third-party company. Contract logistics companies specialize in matters such as planning and creating supply chains, designing facilities, warehousing, transporting and distributing goods, processing orders and collecting payments, managing inventory, and sometimes handling certain aspects of customer service.",
         "cargo_types": "Contract logistics benefits",
         "cargo_types_descr": "The most obvious benefit of contract logistics to a company is cost savings, particularly by eliminating the need to build and maintain a costly logistics infrastructure. By farming out the work, a company can focus more of its attention on its core business.",

@@ -14,7 +14,7 @@ export default function PartnerItem({ messages, hover, handleMouseEnter, handleM
           onMouseEnter={handleMouseEnter.bind(this, `${id}`)}
           onMouseLeave={handleMouseleave}
         >
-          <Image src={partnerImage.src} width={150} height={100} alt="winebureau" />
+          <Image src={partnerImage.src} width={150} height={100} alt={id} />
           <span>{descr}</span>
         </div>
       );

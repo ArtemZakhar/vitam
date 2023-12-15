@@ -6,34 +6,18 @@ import Service from './service';
 
 import classes from './servicesPage.module.scss';
 
-import Road from './img/road.jpg';
-import Sea from './img/sea.jpg';
-import Groupage from './img/groupage.jpg';
-import Consulting from './img/consulting.jpg';
-import Douane from './img/customs.jpg';
-import Contract from './img/contractLogistics.jpg';
 import ContactForm from '../contactPage/contactForm';
 
 function ServicesPage({ messages, contactFormMessages }) {
   const initialState = {
     home: true,
-    road: false,
-    sea: false,
-    groupage: false,
-    consult: false,
-    customs: false,
-    contract: false,
   };
   const [showedInformation, setShowedInformation] = useState(initialState);
-  const {
-    h1,
-    road_Transport,
-    sea_Freight,
-    gropage,
-    consulting,
-    customs_services,
-    contract_logistics,
-  } = messages;
+  const { h1, services, introduction, cards, service } = messages;
+
+  Object.keys(cards).forEach((item) => {
+    initialState[item] = false;
+  });
 
   function handleView(prop) {
     if (showedInformation[prop]) {
@@ -50,74 +34,36 @@ function ServicesPage({ messages, contactFormMessages }) {
     document.querySelector('body').scrollTo(0, 0);
   }
 
+  const dataForCards = Object.entries(cards).map(([id, body]) => {
+    return { id, ...body };
+  });
+
+  const dataForServices = Object.entries(service).map(([id, body]) => {
+    return { id, ...body };
+  });
+
   return (
     <>
       <div className={classes.container}>
         <div className={classes.leftLayout}>
-          <LeftLayout
-            handleView={handleView}
-            h1={h1}
-            road_Transport={road_Transport}
-            sea_Freight={sea_Freight}
-            gropage={gropage}
-            consulting={consulting}
-            customs_services={customs_services}
-            contract_logistics={contract_logistics}
-          />
+          <LeftLayout handleView={handleView} h1={h1} messages={dataForCards} />
         </div>
         {showedInformation.home && (
           <div className={classes.cards}>
             <Cards
-              Road={Road}
-              Sea={Sea}
-              Groupage={Groupage}
-              Consulting={Consulting}
-              Douane={Douane}
-              Contract={Contract}
               handleView={handleView}
-              messages={messages}
+              messages={dataForCards}
+              services={services}
+              introduction={introduction}
             />
           </div>
         )}
-        {showedInformation.road && (
-          <div className={classes.cards}>
-            <Service img={Road} messages={messages.service.road} handleView={handleView} />
-          </div>
-        )}
-        {showedInformation.sea && (
-          <div className={classes.cards}>
-            <Service img={Sea} messages={messages.service.sea} handleView={handleView} />
-          </div>
-        )}
-        {showedInformation.groupage && (
-          <div className={classes.cards}>
-            <Service img={Groupage} messages={messages.service.groupage} handleView={handleView} />
-          </div>
-        )}
-        {showedInformation.consult && (
+        {!showedInformation.home && (
           <div className={classes.cards}>
             <Service
-              img={Consulting}
-              messages={messages.service.consulting}
+              messages={dataForServices}
               handleView={handleView}
-            />
-          </div>
-        )}
-        {showedInformation.customs_services && (
-          <div className={classes.cards}>
-            <Service
-              img={Douane}
-              messages={messages.service.customs_services}
-              handleView={handleView}
-            />
-          </div>
-        )}
-        {showedInformation.contract && (
-          <div className={classes.cards}>
-            <Service
-              img={Contract}
-              messages={messages.service.contract_logistics}
-              handleView={handleView}
+              showedInformation={showedInformation}
             />
           </div>
         )}

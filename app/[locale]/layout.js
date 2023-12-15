@@ -6,6 +6,8 @@ import '../globals.scss';
 
 import Header from '@/components/layout/header';
 import Footer from '@/components/footer/footer';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const inter = Playfair_Display({
   weight: ['400', '500', '700'],
@@ -36,24 +38,26 @@ export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <Header
-          messages={{
-            main: t('main'),
-            about: t('about'),
-            services: t('services'),
-            differences: t('differences'),
-            contacts: t('contacts'),
-          }}
-        />
-        {children}
-        <Footer
-          messages={{
-            address: t('address'),
-            tel: t('tel'),
-            mail: t('mail'),
-            rights: t('rights'),
-          }}
-        />
+        <div >
+          <Header
+            messages={{
+              main: t('main'),
+              about: t('about'),
+              services: t('services'),
+              differences: t('differences'),
+              contacts: t('contacts'),
+            }}
+          />
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Footer
+            messages={{
+              address: t('address'),
+              tel: t('tel'),
+              mail: t('mail'),
+              rights: t('rights'),
+            }}
+          />
+        </div>
       </body>
     </html>
   );

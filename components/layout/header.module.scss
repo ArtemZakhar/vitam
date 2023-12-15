@@ -175,10 +175,13 @@
     height: 100px;
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
     &_img {
       display: block;
       position: relative;
+      width: 150px;
+      height: 100px;
     }
     img {
       display: block;
@@ -203,7 +206,7 @@
     height: 750px;
   }
   .header__logo {
-    width: 120px;
+    width: 100px;
   }
 
   .active:hover .menu_background {
@@ -230,7 +233,7 @@
     height: 700px;
   }
   .header__logo {
-    width: 120px;
+    width: 100px;
   }
 
   .active:hover .menu_background {

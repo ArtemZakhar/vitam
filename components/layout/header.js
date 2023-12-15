@@ -26,7 +26,13 @@ function Header({ messages }) {
   return (
     <div className={classes.container}>
       <Link className={classes.header__logo} href="/">
-        <Image src="/logo.png" priority={true} width={150} height={100} alt="vitam logo" />
+        <Image
+          src="/logo.png"
+          fill={true}
+          priority={true}
+          sizes="(max-width: 767px) 100px, (max-width: 1200px) 150px"
+          alt="vitam logo"
+        />
       </Link>
       <div className={`${classes.navigation_block} ${hover && classes.active}`}>
         <div className={classes.hamburger_menu} onClick={handleHover}>

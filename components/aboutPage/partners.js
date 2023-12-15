@@ -32,11 +32,10 @@ export default function Partners({ messages }) {
       return { ...prevState, [card]: true };
     });
   }
-
   function handleMouseleave() {
     setHoverCards((prevState) => {
-      const setAllToFalse = prevState;
-      for (let key of Object.keys(setAllToFalse)) {
+      const setAllToFalse = {};
+      for (let key of Object.keys(prevState)) {
         setAllToFalse[key] = false;
       }
       return { ...setAllToFalse };
