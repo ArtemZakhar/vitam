@@ -41,8 +41,8 @@ function ServicesPage({ messages, contactFormMessages }) {
     }
 
     setShowedInformation((prevState) => {
-      const setAllToFalse = prevState;
-      for (let key of Object.keys(setAllToFalse)) {
+      const setAllToFalse = {};
+      for (let key in prevState) {
         setAllToFalse[key] = false;
       }
       return { ...setAllToFalse, [prop]: true };

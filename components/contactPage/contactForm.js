@@ -29,16 +29,12 @@ function ContactForm({ message }) {
     name: false,
     email: false,
     msg: false,
-    cargo: false,
-    transportType: false,
-    index: false,
-    loadingPlace: false,
-    loadingCountry: false,
-    deliveryPlace: false,
-    deliveryCountry: false,
-    paymentTerms: false,
-    handle: false,
   };
+
+  Object.entries(cargo_details).map(([id]) => {
+    return (initialState[id] = false);
+  });
+
   const [blure, setBlure] = useState(initialState);
   const [moreLines, setMoreLines] = useState(false);
   const [loadingMsg, setLoadingMsg] = useState(false);
@@ -113,19 +109,12 @@ function ContactForm({ message }) {
         emailInputRef.current.value = '';
         msgInputRef.current.value = '';
 
-        setBlure({
-          name: false,
-          email: false,
-          msg: false,
-          cargo: false,
-          transportType: false,
-          index: false,
-          loadingPlace: false,
-          loadingCountry: false,
-          deliveryPlace: false,
-          deliveryCountry: false,
-          paymentTerms: false,
-          handle: false,
+        setBlure((prevState) => {
+          const newObj = {};
+          for (let key in prevState) {
+            newObj[key] = false;
+          }
+          return newObj;
         });
 
         setMoreLines(false);

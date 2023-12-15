@@ -6,14 +6,14 @@ import DifferenceItem from './differenceItem';
 
 export default function Differences({ messages }) {
   const { h1, differences } = messages;
+  const initialState = {};
 
-  const initialState = {
-    monitoring: true,
-    report: false,
-    always: false,
-    portfolio: false,
-    competition: false,
-  };
+  Object.entries(differences).map(([id], i) => {
+    if (i === 0) {
+      return (initialState[id] = true);
+    }
+    return (initialState[id] = false);
+  });
 
   let images = require.context('../../public/img/differences', true);
   const [showBenefit, setShowBenefit] = useState(initialState);
@@ -23,8 +23,8 @@ export default function Differences({ messages }) {
       return;
     }
     setShowBenefit((prevState) => {
-      const setAllToFalse = prevState;
-      for (let key in setAllToFalse) {
+      const setAllToFalse = {};
+      for (let key in prevState) {
         setAllToFalse[key] = false;
       }
       return { ...setAllToFalse, [slide]: true };

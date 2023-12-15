@@ -26,8 +26,8 @@ function OrderSteps({ messages, title }) {
       return;
     }
     setActiveSteps((prewSteps) => {
-      const setAllToFalse = prewSteps;
-      for (let key of Object.keys(setAllToFalse)) {
+      const setAllToFalse = {};
+      for (let key in prewSteps) {
         setAllToFalse[key] = false;
       }
       return { ...setAllToFalse, [id]: true };

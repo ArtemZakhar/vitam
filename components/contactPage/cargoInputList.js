@@ -23,7 +23,6 @@ export default function CargoInputList({ messages, handleBlur, check, blure, get
       return { [input.current?.id]: value };
     });
     getCargoData(inputInformation);
-    console.log(inputInformation);
   }
 
   function listOfInputs(inputs) {
