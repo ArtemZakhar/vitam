@@ -38,7 +38,7 @@ export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <div >
+        <div style={{ minHeight: '100vh' }}>
           <Header
             messages={{
               main: t('main'),
@@ -49,15 +49,15 @@ export default function RootLayout({ children, params: { locale } }) {
             }}
           />
           <Suspense fallback={<Loading />}>{children}</Suspense>
-          <Footer
-            messages={{
-              address: t('address'),
-              tel: t('tel'),
-              mail: t('mail'),
-              rights: t('rights'),
-            }}
-          />
         </div>
+        <Footer
+          messages={{
+            address: t('address'),
+            tel: t('tel'),
+            mail: t('mail'),
+            rights: t('rights'),
+          }}
+        />
       </body>
     </html>
   );

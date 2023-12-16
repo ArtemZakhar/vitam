@@ -87,6 +87,9 @@
     }
     &_link {
       color: $blue-700;
+      a {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -149,7 +152,8 @@
   }
 }
 
-@media (max-width: 767px) and (orientation: landscape) {
+@media (max-width: 767px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (max-width: 767px) {
   .container {
     width: 515px;
   }

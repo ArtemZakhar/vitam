@@ -141,7 +141,8 @@
   }
 }
 
-@media (max-width: 767px) and (orientation: landscape) {
+@media (max-width: 767px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (max-width: 767px) {
   .flip {
     font-size: 15px;
     &__wrapper {
