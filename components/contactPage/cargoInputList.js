@@ -1,30 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { forwardRef, useRef } from 'react';
 import Image from 'next/image';
 
 import classes from './contactPage.module.scss';
 import Done from './icons/done.png';
 
-export default function CargoInputList({ messages, handleBlur, check, blure, getCargoData }) {
-  const inputRefs = useRef([
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-  ]);
-
-  if (inputRefs.current) {
-    const inputInformation = inputRefs.current.map((input) => {
-      const value = input.current?.value ? input.current.value : 'no information';
-      return { [input.current?.id]: value };
-    });
-    getCargoData(inputInformation);
-  }
-
+const CargoInputList = forwardRef(function ({ messages, handleBlur, check, blure }, ref) {
   function listOfInputs(inputs) {
     const viewList = inputs.map((input, i) => {
       const { id, name, label } = input;
@@ -35,7 +15,7 @@ export default function CargoInputList({ messages, handleBlur, check, blure, get
             className={`${classes.inputName} ${blure[id] && classes.focused}`}
             type="text"
             id={id}
-            ref={inputRefs.current[i]}
+            ref={ref.current[i]}
             placeholder={name}
           />
           <label className={classes.labelName} htmlFor={id}>
@@ -66,4 +46,6 @@ export default function CargoInputList({ messages, handleBlur, check, blure, get
   const elements = listOfInputs(messages);
 
   return <>{elements}</>;
-}
+});
+
+export default CargoInputList;

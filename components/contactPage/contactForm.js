@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useRef, useState } from 'react';
 import Image from 'next/image';
 
 import classes from './contactPage.module.scss';
@@ -45,6 +45,18 @@ function ContactForm({ message }) {
   const emailInputRef = useRef();
   const msgInputRef = useRef();
 
+  const additionalInputRefs = useRef([
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+  ]);
+
   // blure and styles
   function handleBlur(e, name) {
     if (e.target.value === '') {
@@ -62,13 +74,14 @@ function ContactForm({ message }) {
   }
 
   //Submit form
-  let cargoData = {};
-  function getCargoData(value) {
-    value.forEach((item) => {
-      for (let [key, value] of Object.entries(item)) {
-        cargoData[key] = value;
-      }
-    });
+
+  let cargoData;
+  if (additionalInputRefs.current) {
+    cargoData = additionalInputRefs.current.reduce((result, input) => {
+      const value = input.current?.value ? input.current.value : 'no information';
+      result[input.current?.id] = value;
+      return result;
+    }, {});
   }
 
   function handleSubmit(e) {
@@ -242,11 +255,11 @@ function ContactForm({ message }) {
         {moreLines && (
           <>
             <CargoInputList
+              ref={additionalInputRefs}
               messages={dataForInputList}
               handleBlur={handleBlur}
               check={check}
               blure={blure}
-              getCargoData={getCargoData}
             />
           </>
         )}
